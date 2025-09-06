@@ -1,6 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# ------------------------------
+# Dependencias / gestores
+# ------------------------------
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +12,85 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Si el repo usa npm, ignorar lockfiles de otros gestores
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
 
-# next.js
+# ------------------------------
+# Testing / coverage
+# ------------------------------
+coverage/
+test-results/
+playwright-report/
+.playwright/
+
+# ------------------------------
+# Next.js
+# ------------------------------
 /.next/
 /out/
+.vercel/
+.swc/          # cache del compilador
+.turbo/        # si alguna vez usás Turborepo
 
-# production
+# ------------------------------
+# Producción / builds
+# ------------------------------
 /build
 
-# misc
-.DS_Store
-*.pem
+# ------------------------------
+# Env files
+# (podés optar por cometer .env.example)
+# ------------------------------
+.env*
+!.env.example
 
-# debug
+# ------------------------------
+# Logs / debug
+# ------------------------------
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+logs
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+# ------------------------------
+# TypeScript
+# ------------------------------
 *.tsbuildinfo
-next-env.d.ts
+# Nota: next-env.d.ts suele versionarse (no lo ignores)
+
+# ------------------------------
+# Prisma (SQLite local)
+# ------------------------------
+prisma/*.db
+prisma/*.db-journal
+# Comiteá prisma/schema.prisma y prisma/migrations/
+
+# ------------------------------
+# Lint / tooling caches
+# ------------------------------
+.eslintcache
+.stylelintcache
+
+# ------------------------------
+# VS Code / IDEs
+# ------------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.history/
+
+# ------------------------------
+# OS junk
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Certs / misc
+# ------------------------------
+*.pem
