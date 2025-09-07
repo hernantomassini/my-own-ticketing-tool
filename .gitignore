@@ -1,21 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# ------------------------------
-# Dependencias / gestores
-# ------------------------------
 /node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# Si el repo usa npm, ignorar lockfiles de otros gestores
-yarn.lock
-pnpm-lock.yaml
-bun.lockb
 
 # ------------------------------
 # Testing / coverage
@@ -31,17 +16,16 @@ playwright-report/
 /.next/
 /out/
 .vercel/
-.swc/          # cache del compilador
-.turbo/        # si alguna vez usás Turborepo
+.swc/
+.turbo/
 
 # ------------------------------
-# Producción / builds
+# Builds
 # ------------------------------
 /build
 
 # ------------------------------
 # Env files
-# (podés optar por cometer .env.example)
 # ------------------------------
 .env*
 !.env.example
@@ -60,10 +44,9 @@ logs
 # TypeScript
 # ------------------------------
 *.tsbuildinfo
-# Nota: next-env.d.ts suele versionarse (no lo ignores)
 
 # ------------------------------
-# Prisma (SQLite local)
+# Prisma (SQLite)
 # ------------------------------
 prisma/*.db
 prisma/*.db-journal
@@ -94,3 +77,4 @@ Thumbs.db
 # Certs / misc
 # ------------------------------
 *.pem
+/generated/prisma
