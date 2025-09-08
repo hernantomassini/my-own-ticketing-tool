@@ -1,4 +1,11 @@
 {
+  "layout-header": {
+    "language-selector": {
+      "language": "Language",
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
   "login": {
     "title": "My Ticketing Tool",
     "in-progress": "Login is in progress... Auth is not implemented yet.",

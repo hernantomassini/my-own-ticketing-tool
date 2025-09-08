@@ -43,7 +43,7 @@ export default function Login() {
           </div>
 
           <Button asChild className="mt-5 w-full">
-            <Link href="/board">{t('login-with-email')}</Link>
+            <Link href="/home">{t('login-with-email')}</Link>
           </Button>
 
           <Button disabled className="mt-5 w-full">

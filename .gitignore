@@ -46,13 +46,6 @@ logs
 *.tsbuildinfo
 
 # ------------------------------
-# Prisma (SQLite)
-# ------------------------------
-prisma/*.db
-prisma/*.db-journal
-# Comiteá prisma/schema.prisma y prisma/migrations/
-
-# ------------------------------
 # Lint / tooling caches
 # ------------------------------
 .eslintcache
@@ -77,4 +70,3 @@ Thumbs.db
 # Certs / misc
 # ------------------------------
 *.pem
-/generated/prisma

@@ -1,0 +1,21 @@
+{
+  "layout-header": {
+    "language-selector": {
+      "language": "Idioma",
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "login": {
+    "title": "Mi herramienta de Ticket",
+    "in-progress": "Construcción de login en progreso, la autenticación todavía no fué implementada.",
+    "email": "Email",
+    "password": "Contraseña",
+    "remember-me": "Recuerdame",
+    "forgot-password": "¿Olvidaste tu contraseña?",
+    "login-with-email": "Continuar al Tablero",
+    "login-with-google": "Iniciar sesión con Google",
+    "no-account": "Sin cuenta?",
+    "sign-up": "Regístrate!"
+  }
+}

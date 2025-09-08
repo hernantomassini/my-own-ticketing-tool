@@ -15,7 +15,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 
 - [Next.js](https://nextjs.org/) + React (App Router)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Prisma](https://www.prisma.io/) with SQLite
+- [Supabase](https://supabase.com/)
 - [shadcn/ui](https://ui.shadcn.com/) for UI components
 - [next-intl](https://next-intl-docs.vercel.app/) for i18n
 
@@ -24,9 +24,12 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 
 ### Core Features
 - [x] Create the Login screen
-- [ ] Create the Board screen loading Tickets from SQLite
+- [ ] Implement CRUD for Boards
+- [ ] Create a reusable layout to change to another Board.
+- [ ] Implement CRUD for Columns
 - [ ] Implement CRUD for Tickets
 - [ ] Add filtering options on the Board screen
+- [ ] Implement Drag and drop features 
 
 ### Authentication
 - [ ] Add Auth with email & password
@@ -37,7 +40,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 - [ ] Write E2E tests (Playwright)
 
 ### Extras
-- [ ] Implement i18n
+- [x] Implement i18n
 - [ ] Toggle between dark and light theme
 
 ---
