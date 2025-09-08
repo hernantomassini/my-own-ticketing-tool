@@ -44,7 +44,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 
 ## 🌐 Live Demo
 
-👉 [Check it on Vercel](https://my-own-ticketing-tool.vercel.app/login)
+👉 [Check it on Vercel](https://my-own-ticketing-tool.vercel.app)
 
 ---
 
@@ -53,7 +53,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 Clone the repo and run the development server:
 
 ```bash
-git clone https://github.com/yourusername/my-own-ticketing-tool.git
+git clone https://github.com/hernantomassini/my-own-ticketing-tool.git
 cd my-own-ticketing-tool
 
 npm install
