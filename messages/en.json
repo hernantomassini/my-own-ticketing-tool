@@ -1,0 +1,14 @@
+{
+  "login": {
+    "title": "My Ticketing Tool",
+    "in-progress": "Login is in progress... Auth is not implemented yet.",
+    "email": "Email",
+    "password": "Password",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot password?",
+    "login-with-email": "Continue to Board",
+    "login-with-google": "Sign in with Google",
+    "no-account": "Don't have an account?",
+    "sign-up": "Sign up now!"
+  }
+}

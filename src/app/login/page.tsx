@@ -6,8 +6,11 @@ import { Switch } from "@/components/ui/switch";
 import { Mail } from "lucide-react";
 import { SiLinkedin, SiGithub, SiGoogle } from "react-icons/si";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Login() {
+  const t = useTranslations("login");
+
   return (
     <main className="min-h-dvh flex">
       <div
@@ -17,46 +20,44 @@ export default function Login() {
 
       <section className="md:basis-[30%] mt-25 mb-8 mx-8 flex flex-col gap-6">
         <div className="gap-5">
-          <h1 className="text-3xl font-bold mb-4">My Ticketing Tool</h1>
-          <p>Login is in progress... Auth is not implemented yet.</p>
+          <h1 className="text-3xl font-bold mb-4">{t('title')}</h1>
+          <p>{t('in-progress')}</p>
         </div>
 
         <form className="mt-3 space-y-3">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('email')}</Label>
           <Input disabled id="email" type="email" placeholder="Email (disabled)"></Input>
 
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('password')}</Label>
           <Input disabled id="password" type="password" placeholder="Password (disabled)"></Input>
 
           <div className="flex justify-between items-center mt-5">
             <div className="flex gap-2">
               <Switch disabled id="remember-me"/>
-              <Label htmlFor="remember-me">Remember me</Label>
+              <Label htmlFor="remember-me">{t('remember-me')}</Label>
             </div>
 
             <Link href="" className="text-blue-400 hover:underline">
-              <small>Forgot password?</small>
+              <small>{t('forgot-password')}</small>
             </Link>
           </div>
 
           <Button asChild className="mt-5 w-full">
-            <Link href="/board">Continue to Dashboard</Link>
+            <Link href="/board">{t('login-with-email')}</Link>
           </Button>
 
           <Button disabled className="mt-5 w-full">
-            <SiGoogle /> Sign in with Google
+            <SiGoogle /> {t('login-with-google')}
           </Button>
         </form>
 
         <div className="flex justify-center">
           <small>
-            Don&apos;t have an account?{" "}
-            {/* <a className="hover:underline cursor-pointer text-blue-400">Sign up now!</a> */}
+            {t('no-account')}{" "}
 
             <Link href="" className="text-blue-400 hover:underline">
-              Sign up now!
+              {t('sign-up')}
             </Link>
-
           </small>
         </div>
 
