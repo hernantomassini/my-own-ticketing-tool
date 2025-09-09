@@ -1,4 +1,4 @@
-"use client"
+import 'server-only'
 
 import { useTranslations } from "next-intl";
 import ResponsiveCreateBoardButton from "./components/ResponsiveCreateBoardButton";

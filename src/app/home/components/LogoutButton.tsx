@@ -1,17 +1,20 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { supabaseBrowser } from "@/lib/supabase-browser";
 import { LogOutIcon } from "lucide-react"
 import { useRouter } from "next/navigation";
-import { useTransition } from "react";
+import { useMemo, useTransition } from "react";
 
 export default function LogoutButton() {
 
+  const supabase = useMemo(() => supabaseBrowser(), []);
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
   const handleLogout = () => {
-    startTransition(() => {
+    startTransition(async () => {
+      await supabase.auth.signOut()
       router.push('/login');
     });
   };

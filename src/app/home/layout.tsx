@@ -1,25 +1,29 @@
-import { getLocale } from "next-intl/server";
-import { Locale } from "next-intl";
+import 'server-only'
 
-import LocaleSwitcher from "./components/LocaleSwitcher";
 import LogoutButton from "./components/LogoutButton";
+import { supabaseServer } from "@/lib/supabase-server";
+import { redirect } from 'next/navigation';
+import PreferencesMenu from '@/components/PreferencesMenu';
 
 export default async function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale: Locale = (await getLocale());
+  const supabase = await supabaseServer();
+
+  const { data: { session }, error } = await supabase.auth.getSession();
+
+ if (error || !session) {
+    redirect('/login');
+  }
 
   return (
     <>
       <header className="flex items-center justify-between px-4 py-2 border-b">
         <span className="font-bold">My Board</span>
         <div className="flex items-center gap-4 cursor-pointer">
-          <LocaleSwitcher
-            currentLocale={locale}
-          />
-
+          <PreferencesMenu />
           <LogoutButton />
         </div>
       </header>

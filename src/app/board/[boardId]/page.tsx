@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { BoardPageRouteProps } from "@/models/routes/board-page.model";
 
 export default async function BoardPage({ params }: BoardPageRouteProps) {

@@ -1,5 +1,3 @@
-'use client'
-
 import { createBoard } from "@/actions/createBoard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +9,7 @@ function SubmitButton() {
   const t = useTranslations('home');
 
   return (
-    <Button className="w-full " type="submit" disabled={pending}>
+    <Button className="w-full" type="submit" disabled={pending}>
       {pending ? t('creating') : t('create')}
     </Button>
   );

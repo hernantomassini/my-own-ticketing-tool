@@ -7,15 +7,16 @@
     }
   },
   "login": {
-    "title": "Mi herramienta de Ticket",
+    "title": "Mi herramienta de Tickets",
     "in-progress": "Construcción de login en progreso, la autenticación todavía no fué implementada.",
     "email": "Email",
     "password": "Contraseña",
     "remember-me": "Recuerdame",
     "forgot-password": "¿Olvidaste tu contraseña?",
-    "login-anonymously": "Iniciar sesión anónimamente",
+    "login-as-a-guest": "Continuar como invitado",
     "login-with-email": "Iniciar sesión con Email",
     "login-with-google": "Iniciar sesión con Google",
+    "logging-in": "Logeando...",
     "no-account": "Sin cuenta?",
     "sign-up": "Regístrate!"
   },

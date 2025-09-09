@@ -32,6 +32,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 - [ ] Implement Drag and drop features 
 
 ### Authentication
+- [x] Add anonymous Auth
 - [ ] Add Auth with email & password
 - [ ] Add Auth with Google
 
@@ -60,5 +61,7 @@ git clone https://github.com/hernantomassini/my-own-ticketing-tool.git
 cd my-own-ticketing-tool
 
 npm install
-npm run dev
-# or yarn dev / pnpm dev / bun dev
+npm run supabase:start
+Copy .env.example and rename it to .env. Then update NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY values.
+npm run supabase:reset # to run migrations
+npm run dev # or yarn dev / pnpm dev / bun dev

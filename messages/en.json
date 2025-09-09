@@ -13,9 +13,10 @@
     "password": "Password",
     "remember-me": "Remember me",
     "forgot-password": "Forgot password?",
-    "login-anonymously": "Sign in anonymously",
+    "login-as-a-guest": "Continue as a Guest",
     "login-with-email": "Sign in with Email",
     "login-with-google": "Sign in with Google",
+    "logging-in": "Logging in...",
     "no-account": "Don't have an account?",
     "sign-up": "Sign up now!"
   },
