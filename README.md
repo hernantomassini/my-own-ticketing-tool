@@ -42,7 +42,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 
 ### Extras
 - [x] Implement i18n
-- [ ] Toggle between dark and light theme
+- [x] Toggle between dark and light theme
 
 ---
 
