@@ -13,9 +13,23 @@
     "password": "Password",
     "remember-me": "Remember me",
     "forgot-password": "Forgot password?",
-    "login-with-email": "Continue to Board",
+    "login-anonymously": "Sign in anonymously",
+    "login-with-email": "Sign in with Email",
     "login-with-google": "Sign in with Google",
     "no-account": "Don't have an account?",
     "sign-up": "Sign up now!"
+  },
+  "home": {
+    "title": "My Boards!",
+    "add-board": "Add Board",
+    "add-board-description": "Create a new board to manage your tickets.",
+    "board-name": "Board name...",
+    "create": "Create",
+    "creating": "Creating..."
+  },
+  "board": {
+    "new-ticket": "New Ticket",
+    "new-ticket-title": "Create a new ticket",
+    "new-ticket-description": "Fill in the details below to create a new ticket."
   }
 }

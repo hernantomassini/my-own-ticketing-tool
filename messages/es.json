@@ -13,9 +13,23 @@
     "password": "Contraseña",
     "remember-me": "Recuerdame",
     "forgot-password": "¿Olvidaste tu contraseña?",
-    "login-with-email": "Continuar al Tablero",
+    "login-anonymously": "Iniciar sesión anónimamente",
+    "login-with-email": "Iniciar sesión con Email",
     "login-with-google": "Iniciar sesión con Google",
     "no-account": "Sin cuenta?",
     "sign-up": "Regístrate!"
+  },
+  "home": {
+    "title": "Mis Tableros!",
+    "add-board": "Agregar Tablero",
+    "add-board-description": "Crea un tablero nuevo para gestionar tus tickets.",
+    "board-name": "Nombre del tablero...",
+    "create": "Crear",
+    "creating": "Creando..."
+  },
+  "board": {
+    "new-ticket": "Nuevo Ticket",
+    "new-ticket-title": "Crear un nuevo ticket",
+    "new-ticket-description": "Completa los detalles de debajo para crear un nuevo ticket."
   }
 }

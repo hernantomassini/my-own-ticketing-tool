@@ -42,7 +42,11 @@ export default function Login() {
             </Link>
           </div>
 
-          <Button asChild className="mt-5 w-full">
+          <Button className="mt-5 w-full">
+            <Link href="/home">{t('login-anonymously')}</Link>
+          </Button>
+
+          <Button disabled className="mt-5 w-full">
             <Link href="/home">{t('login-with-email')}</Link>
           </Button>
 

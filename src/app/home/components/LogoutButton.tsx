@@ -23,6 +23,7 @@ export default function LogoutButton() {
       variant="ghost"
       size="icon"
       aria-label="Log out"
+      disabled={pending}
     >
       <LogOutIcon />
     </Button>
