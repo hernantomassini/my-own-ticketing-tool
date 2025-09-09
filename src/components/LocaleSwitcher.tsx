@@ -18,7 +18,7 @@ export default function LocaleSwitcher({ currentLocale }: { currentLocale: Local
   return (
     <>
       <Select defaultValue='en' value={currentLocale} onValueChange={handleLocaleChange} >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[120px]">
           <SelectValue placeholder={t('language')} />
         </SelectTrigger>
         <SelectContent>

@@ -21,7 +21,7 @@ export default async function HomeLayout({
   return (
     <>
       <header className="flex items-center justify-between px-4 py-2 border-b">
-        <span className="font-bold">My Board</span>
+        <span className="font-bold">Ticketing Tool</span>
         <div className="flex items-center gap-4 cursor-pointer">
           <PreferencesMenu />
           <LogoutButton />
