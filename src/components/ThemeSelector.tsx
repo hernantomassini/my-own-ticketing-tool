@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { Button } from './ui/button';
 import { useEffect, useState } from 'react';
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 
 export default function ThemeSelector() {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -23,7 +24,7 @@ export default function ThemeSelector() {
       onClick={() => setTheme(current === 'dark' ? 'light' : 'dark')}
       aria-label="Toggle theme"
     >
-      {current === 'dark' ? '🌙' : '☀️'}
+      {current === 'dark' ? <FaLightbulb /> : <FaRegLightbulb /> }
     </Button>
   );
 }
