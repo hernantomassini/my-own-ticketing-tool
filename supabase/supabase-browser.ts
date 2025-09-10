@@ -1,5 +1,6 @@
 'use client';
 
+import { Database } from '@/models/supabase';
 import { createBrowserClient } from '@supabase/ssr';
 
 export function supabaseBrowser() {
@@ -8,5 +9,5 @@ export function supabaseBrowser() {
 
   if (!url || !key) throw new Error('Missing Supabase envs');
 
-  return createBrowserClient(url, key);
+  return createBrowserClient<Database>(url, key);
 }

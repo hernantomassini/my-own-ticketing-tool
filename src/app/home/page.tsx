@@ -1,10 +1,17 @@
 import 'server-only'
 
-import { useTranslations } from "next-intl";
 import ResponsiveCreateBoardButton from "./components/ResponsiveCreateBoardButton";
+import { supabaseServer } from '../../../supabase/supabase-server';
+import { getTranslations } from 'next-intl/server';
 
-export default function HomePage() {
-  const t = useTranslations('home');
+export default async function HomePage() {
+  const t = await getTranslations('home');
+  const supabase = await supabaseServer();
+
+  const { data: boards, error } = await supabase
+    .from('board')
+    .select('id, name')
+    .order('created_at', { ascending: false });
 
   return (
     <div className="flex flex-col items-center md:items-start">

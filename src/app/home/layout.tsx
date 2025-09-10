@@ -1,8 +1,6 @@
 import 'server-only'
 
 import LogoutButton from "./components/LogoutButton";
-import { supabaseServer } from "@/lib/supabase-server";
-import { redirect } from 'next/navigation';
 import PreferencesMenu from '@/components/PreferencesMenu';
 
 export default async function HomeLayout({
@@ -10,13 +8,6 @@ export default async function HomeLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await supabaseServer();
-
-  const { data: { session }, error } = await supabase.auth.getSession();
-
- if (error || !session) {
-    redirect('/login');
-  }
 
   return (
     <>

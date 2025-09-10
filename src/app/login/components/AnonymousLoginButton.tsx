@@ -3,7 +3,7 @@
 import { useMemo, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { supabaseBrowser } from '@/lib/supabase-browser';
+import { supabaseBrowser } from '../../../../supabase/supabase-browser';
 import { useTranslations } from 'next-intl';
 
 export function AnonymousLoginButton() {
@@ -15,9 +15,9 @@ export function AnonymousLoginButton() {
 
   const handleClick = () =>
     startTransition(async () => {
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      const { data: { user }, error } = await supabase.auth.getUser();
 
-      if (sessionError || !session) {
+      if (error || !user) {
         const { error } = await supabase.auth.signInAnonymously();
 
         if (error) {

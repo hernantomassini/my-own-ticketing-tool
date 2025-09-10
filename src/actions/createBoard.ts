@@ -1,16 +1,32 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { supabaseServer } from '../../supabase/supabase-server';
+import { Board } from '@/models/board.model';
+import { Database } from '@/models/supabase';
 
-export async function createBoard(formData: FormData): Promise<void> {
+export async function createBoard(_prev: Board | null, formData: FormData): Promise<Board | null> {
   const name = String(formData.get('name') || '').trim();
 
   if (!name) {
-    return;
+    return null;
   }
 
-  // TODO: Save into db
-  // await db.insert({ title: name });
+  type BoardInsert = Database['public']['Tables']['board']['Insert'];
+  const supabase = await supabaseServer();
 
-  revalidatePath('/'); // o la ruta donde listás boards
+  const { data, error } = await supabase
+    .from('board')
+    .insert({ name } satisfies BoardInsert)
+    .select('id, name')
+    .single();
+
+  if (error) {
+    return null;
+  }
+
+  if (data) {
+    return data
+  }
+
+  return null;
 }
