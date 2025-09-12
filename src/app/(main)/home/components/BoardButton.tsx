@@ -14,14 +14,12 @@ type BoardButtonProps = {
 } & ButtonProps;
 
 export default function BoardButton({ href, icon, label, className, boardId, deletable, ...props}: BoardButtonProps) {
-  const commonClasses = cn(
-    "relative",
+  const cardClasses = cn(
     "cursor-pointer group h-36 w-36 rounded-xl",
     "border-2 border-dashed hover:border-solid",
     "hover:bg-muted/40",
     "flex flex-col items-center justify-center gap-1",
-    "font-medium",
-    className
+    "font-medium"
   );
 
   const content = (
@@ -46,39 +44,37 @@ export default function BoardButton({ href, icon, label, className, boardId, del
 
   if (href) {
     return (
-      <>
+      <div className={cn("relative inline-block", className)}>
         <Button
           asChild
           variant="outline"
-          className={commonClasses}
+          className={cardClasses}
           {...props}
         >
-          <div className="flex flex-col">
-            {deleteButton}
-            <Link href={href} aria-label={label} title={label}>
-              {content}
-            </Link>
-          </div>
+          <Link href={href} aria-label={label} title={label}>
+            {content}
+          </Link>
         </Button>
-      </>
+
+        {deleteButton}
+      </div>
     )
   } else {
     return (
-      <>
+      <div className={cn("relative inline-block", className)}>
         <Button
           type="button"
           variant="outline"
           aria-label={label}
           title={label}
-          className={commonClasses}
+          className={cardClasses}
           {...props}
         >
-          <div className="flex flex-col">
-            {deleteButton}
-            {content}
-          </div>
+          {content}
         </Button>
-      </>
+
+        {deleteButton}
+      </div>
     )
   }
 }
