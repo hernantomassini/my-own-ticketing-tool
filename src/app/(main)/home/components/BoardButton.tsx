@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import DeleteBoardButton from "./DeleteBoardButton";
 
 type ButtonProps = React.ComponentProps<'button'>;
 
@@ -8,10 +9,13 @@ type BoardButtonProps = {
   icon?: React.ReactNode,
   href?: string
   label: string,
+  boardId: string;
+  deletable: boolean;
 } & ButtonProps;
 
-export default function BoardButton({ href, icon, label, className, ...props}: BoardButtonProps) {
+export default function BoardButton({ href, icon, label, className, boardId, deletable, ...props}: BoardButtonProps) {
   const commonClasses = cn(
+    "relative",
     "cursor-pointer group h-36 w-36 rounded-xl",
     "border-2 border-dashed hover:border-solid",
     "hover:bg-muted/40",
@@ -30,31 +34,51 @@ export default function BoardButton({ href, icon, label, className, ...props}: B
     </>
   );
 
+  const deleteButton = (
+    <>
+      {deletable && boardId && (
+        <div className="absolute right-2 top-2 z-10">
+          <DeleteBoardButton id={boardId} />
+        </div>
+      )}
+    </>
+  )
+
   if (href) {
     return (
-      <Button
-        asChild
-        variant="outline"
-        className={commonClasses}
-        {...props}
-      >
-        <Link href={href} aria-label={label} title={label}>
-          {content}
-        </Link>
-      </Button>
+      <>
+        <Button
+          asChild
+          variant="outline"
+          className={commonClasses}
+          {...props}
+        >
+          <div>
+            {deleteButton}
+            <Link href={href} aria-label={label} title={label}>
+              {content}
+            </Link>
+          </div>
+        </Button>
+      </>
     )
   } else {
     return (
-      <Button
-        type="button"
-        variant="outline"
-        aria-label={label}
-        title={label}
-        className={commonClasses}
-        {...props}
-      >
-        {content}
-      </Button>
+      <>
+        <Button
+          type="button"
+          variant="outline"
+          aria-label={label}
+          title={label}
+          className={commonClasses}
+          {...props}
+        >
+          <div>
+            {deleteButton}
+            {content}
+          </div>
+        </Button>
+      </>
     )
   }
 }

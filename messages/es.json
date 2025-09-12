@@ -26,7 +26,12 @@
     "add-board-description": "Crea un tablero nuevo para gestionar tus tickets.",
     "board-name": "Nombre del tablero...",
     "create": "Crear",
-    "creating": "Creando..."
+    "creating": "Creando...",
+    "cancel": "Cancelar",
+    "delete-board-title": "Borrar tablero",
+    "delete-board-description": "Esta acción no se puede deshacer.",
+    "delete": "Borrar",
+    "deleting": "Borrando..."
   },
   "board": {
     "new-ticket": "Nuevo Ticket",

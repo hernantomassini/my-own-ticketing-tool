@@ -29,6 +29,8 @@ export default async function HomePage() {
         {(boards || []).map((board) => (
           <BoardButton
             key={board.id}
+            boardId={board.id}
+            deletable={true}
             label={board.name}
             href={`/board/${board.id}`}
           >

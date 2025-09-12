@@ -26,7 +26,12 @@
     "add-board-description": "Create a new board to manage your tickets.",
     "board-name": "Board name...",
     "create": "Create",
-    "creating": "Creating..."
+    "creating": "Creating...",
+    "cancel": "Cancel",
+    "delete-board-title": "Delete board",
+    "delete-board-description": "This action cannot be undone.",
+    "delete": "Delete",
+    "deleting": "Deleting..."
   },
   "board": {
     "new-ticket": "New Ticket",

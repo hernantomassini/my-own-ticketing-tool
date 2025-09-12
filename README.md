@@ -24,8 +24,8 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 
 ### Core Features
 - [x] Create the Login screen
-- [ ] Implement CRUD for Boards
-- [ ] Create a reusable layout to change to another Board.
+- [x] Implement CRUD for Boards
+- [x] Create a reusable layout to change to another Board.
 - [ ] Implement CRUD for Columns
 - [ ] Implement CRUD for Tickets
 - [ ] Add filtering options on the Board screen
