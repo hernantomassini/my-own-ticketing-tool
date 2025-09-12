@@ -53,7 +53,7 @@ export default function BoardButton({ href, icon, label, className, boardId, del
           className={commonClasses}
           {...props}
         >
-          <div>
+          <div className="flex flex-col">
             {deleteButton}
             <Link href={href} aria-label={label} title={label}>
               {content}
