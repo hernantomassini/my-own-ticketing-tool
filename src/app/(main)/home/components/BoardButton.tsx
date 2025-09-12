@@ -73,7 +73,7 @@ export default function BoardButton({ href, icon, label, className, boardId, del
           className={commonClasses}
           {...props}
         >
-          <div>
+          <div className="flex flex-col">
             {deleteButton}
             {content}
           </div>
