@@ -9,8 +9,8 @@ type BoardButtonProps = {
   icon?: React.ReactNode,
   href?: string
   label: string,
-  boardId: string;
-  deletable: boolean;
+  boardId?: string;
+  deletable?: boolean;
 } & ButtonProps;
 
 export default function BoardButton({ href, icon, label, className, boardId, deletable, ...props}: BoardButtonProps) {

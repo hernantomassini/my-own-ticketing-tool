@@ -4,13 +4,14 @@ import CreateBoardButton from "./components/CreateBoardButton";
 import { getTranslations } from 'next-intl/server';
 import BoardButton from './components/BoardButton';
 import { supabaseServer } from '@/lib/supabase-server';
+import { DBTableName } from '@/models/enum/db-table-name.model';
 
 export default async function HomePage() {
   const t = await getTranslations('home');
   const supabase = await supabaseServer();
 
   const { data: boards, error } = await supabase
-    .from('board')
+    .from(DBTableName.Board)
     .select('id, name')
     .order('created_at', { ascending: false });
 
@@ -19,7 +20,7 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="flex flex-col items-center md:items-start">
+    <div className="m-8 flex flex-col items-center md:items-start">
 
       <span className="text-3xl">{t('title')}</span>
 

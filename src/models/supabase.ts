@@ -30,26 +30,109 @@ export type Database = {
         }
         Relationships: []
       }
-      profiles: {
+      board_list: {
         Row: {
-          avatar_url: string | null
+          board_id: string
           created_at: string
-          display_name: string
           id: string
+          sort_order: number | null
+          title: string
         }
         Insert: {
-          avatar_url?: string | null
+          board_id: string
           created_at?: string
-          display_name: string
-          id: string
+          id?: string
+          sort_order?: number | null
+          title: string
         }
         Update: {
-          avatar_url?: string | null
+          board_id?: string
           created_at?: string
-          display_name?: string
           id?: string
+          sort_order?: number | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "board_list_board_id_fkey"
+            columns: ["board_id"]
+            isOneToOne: false
+            referencedRelation: "board"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
         }
         Relationships: []
+      }
+      ticket: {
+        Row: {
+          assigned_to: string | null
+          created_at: string
+          created_by: string
+          description: string | null
+          id: string
+          list_id: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          assigned_to?: string | null
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          id?: string
+          list_id: string
+          sort_order: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          assigned_to?: string | null
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          id?: string
+          list_id?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ticket_assigned_to_profiles_fk"
+            columns: ["assigned_to"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "ticket_list_fk"
+            columns: ["list_id"]
+            isOneToOne: false
+            referencedRelation: "board_list"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {

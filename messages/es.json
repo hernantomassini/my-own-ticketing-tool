@@ -1,4 +1,8 @@
 {
+  "shared": {
+    "create": "Crear",
+    "creating": "Creando..."
+  },
   "layout-header": {
     "language-selector": {
       "language": "Idioma",
@@ -25,8 +29,6 @@
     "add-board": "Agregar Tablero",
     "add-board-description": "Crea un tablero nuevo para gestionar tus tickets.",
     "board-name": "Nombre del tablero...",
-    "create": "Crear",
-    "creating": "Creando...",
     "cancel": "Cancelar",
     "delete-board-title": "Borrar tablero",
     "delete-board-description": "Esta acción no se puede deshacer.",
@@ -34,6 +36,10 @@
     "deleting": "Borrando..."
   },
   "board": {
+    "error": "Error",
+    "invalid-board-id": "Board ID inválido.",
+    "add-list": "Añade una lista nueva.",
+    "list-name": "Nombre de la lista...",
     "new-ticket": "Nuevo Ticket",
     "new-ticket-title": "Crear un nuevo ticket",
     "new-ticket-description": "Completa los detalles de debajo para crear un nuevo ticket."

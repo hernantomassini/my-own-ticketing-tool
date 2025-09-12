@@ -1,9 +1,8 @@
 import { TicketSummary } from "./summary/ticket-summary.model";
 
 export interface BoardColumn {
-  id: number;
+  id: string;
   title: string;
   position: number;
-
   tickets: TicketSummary[];
 }

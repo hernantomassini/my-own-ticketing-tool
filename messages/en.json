@@ -1,4 +1,8 @@
 {
+  "shared": {
+    "create": "Create",
+    "creating": "Creating..."
+  },
   "layout-header": {
     "language-selector": {
       "language": "Language",
@@ -25,8 +29,6 @@
     "add-board": "Add Board",
     "add-board-description": "Create a new board to manage your tickets.",
     "board-name": "Board name...",
-    "create": "Create",
-    "creating": "Creating...",
     "cancel": "Cancel",
     "delete-board-title": "Delete board",
     "delete-board-description": "This action cannot be undone.",
@@ -34,6 +36,10 @@
     "deleting": "Deleting..."
   },
   "board": {
+    "error": "Error",
+    "invalid-board-id": "Invalid Board ID.",
+    "add-list": "Add a new list",
+    "list-name": "List name...",
     "new-ticket": "New Ticket",
     "new-ticket-title": "Create a new ticket",
     "new-ticket-description": "Fill in the details below to create a new ticket."

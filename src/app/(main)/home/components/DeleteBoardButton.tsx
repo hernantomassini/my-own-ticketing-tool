@@ -1,12 +1,12 @@
 "use client"
 
-import { deleteBoard } from "@/actions/deleteBoard";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useActionState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { deleteBoard } from "@/actions/board/delete";
 
 interface DeleteBoardButtonProps {
   id: string;

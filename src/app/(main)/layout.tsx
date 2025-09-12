@@ -19,7 +19,9 @@ export default async function HomeLayout({
         </div>
       </header>
 
-      <main className="m-8">{children}</main>
+      <main className="flex-1 min-h-0 overflow-hidden flex flex-col">
+        {children}
+      </main>
     </>
   );
 }

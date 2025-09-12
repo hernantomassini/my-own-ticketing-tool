@@ -1,6 +1,7 @@
 'use server';
 
-import { supabaseServer } from '../lib/supabase-server';
+import { supabaseServer } from '@/lib/supabase-server';
+import { DBTableName } from '@/models/enum/db-table-name.model';
 
 export async function deleteBoard(_: unknown, formData: FormData) {
   const id = String(formData.get('id') || '').trim();
@@ -12,7 +13,7 @@ export async function deleteBoard(_: unknown, formData: FormData) {
   const supabase = await supabaseServer();
 
   const { error } = await supabase
-    .from('board')
+    .from(DBTableName.Board)
     .delete()
     .eq('id', id);
 
