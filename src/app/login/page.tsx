@@ -74,7 +74,7 @@ export default async function Login() {
           </div>
         </section>
 
-        <footer className="flex justify-between items-center border-t pt-1 mb-1">
+        <footer className="flex flex-col md:flex-row justify-between items-center border-t pt-1 mb-1">
           <div className="flex">
             <SocialLink
               href="https://www.linkedin.com/in/hernantomassini/?locale=en_US"

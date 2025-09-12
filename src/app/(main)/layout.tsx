@@ -1,6 +1,6 @@
 import 'server-only'
 
-import LogoutButton from "./components/LogoutButton";
+import LogoutButton from "./home/components/LogoutButton";
 import PreferencesMenu from '@/components/PreferencesMenu';
 
 export default async function HomeLayout({
@@ -19,7 +19,7 @@ export default async function HomeLayout({
         </div>
       </header>
 
-      <main className="p-4">{children}</main>
+      <main className="m-8">{children}</main>
     </>
   );
 }

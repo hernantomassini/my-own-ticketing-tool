@@ -3,8 +3,8 @@
 import { useMemo, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { supabaseBrowser } from '../../../../supabase/supabase-browser';
 import { useTranslations } from 'next-intl';
+import { supabaseBrowser } from "@/lib/supabase-browser";
 
 export function AnonymousLoginButton() {
   const t = useTranslations("login");

@@ -1,10 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { supabaseBrowser } from "../../../../supabase/supabase-browser";
 import { LogOutIcon } from "lucide-react"
 import { useRouter } from "next/navigation";
 import { useMemo, useTransition } from "react";
+import { supabaseBrowser } from "@/lib/supabase-browser";
 
 export default function LogoutButton() {
 

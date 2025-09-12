@@ -6,17 +6,24 @@ import { Input } from "@/components/ui/input";
 import { Board } from "@/models/board.model";
 import { useTranslations } from "next-intl";
 import { useActionState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function AddBoardContent() {
+interface AddBoardContentProps {
+  onSuccess?: () => void;
+}
+
+export default function AddBoardContent({ onSuccess }: AddBoardContentProps) {
   const t = useTranslations('home');
+  const router = useRouter();
 
   const [board, submitCreateBoard, pending] = useActionState<Board | null, FormData>(createBoard, null);
 
   useEffect(() => {
     if (board) {
-      // console.log('NewBoard!', board);
+      onSuccess?.();
+      router.refresh();
     }
-  }, [board]);
+  }, [board, onSuccess, router]);
 
   return (
     <form action={submitCreateBoard} className="space-y-4 m-4 md:m-0">

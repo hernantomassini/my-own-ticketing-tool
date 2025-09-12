@@ -1,0 +1,41 @@
+import 'server-only'
+
+import CreateBoardButton from "./components/CreateBoardButton";
+import { getTranslations } from 'next-intl/server';
+import BoardButton from './components/BoardButton';
+import { supabaseServer } from '@/lib/supabase-server';
+
+export default async function HomePage() {
+  const t = await getTranslations('home');
+  const supabase = await supabaseServer();
+
+  const { data: boards, error } = await supabase
+    .from('board')
+    .select('id, name')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Boards query failed:', error);
+  }
+
+  return (
+    <div className="flex flex-col items-center md:items-start">
+
+      <span className="text-3xl">{t('title')}</span>
+
+      <div className="flex flex-wrap gap-8 ml-12 mt-8">
+        <CreateBoardButton/>
+
+        {(boards || []).map((board) => (
+          <BoardButton
+            key={board.id}
+            label={board.name}
+            href={`/board/${board.id}`}
+          >
+          </BoardButton>
+        ))}
+
+      </div>
+    </div>
+  );
+}
