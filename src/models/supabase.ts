@@ -91,7 +91,7 @@ export type Database = {
           description: string | null
           id: string
           list_id: string
-          sort_order: number
+          sort_order: number | null
           title: string
           updated_at: string
         }
@@ -102,7 +102,7 @@ export type Database = {
           description?: string | null
           id?: string
           list_id: string
-          sort_order: number
+          sort_order?: number | null
           title: string
           updated_at?: string
         }
@@ -113,7 +113,7 @@ export type Database = {
           description?: string | null
           id?: string
           list_id?: string
-          sort_order?: number
+          sort_order?: number | null
           title?: string
           updated_at?: string
         }

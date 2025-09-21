@@ -21,7 +21,7 @@ export default function CreateBoardButton() {
   return (
     <ResponsivePopover
       title={t('add-board')}
-      trigger={<AddBoardButton />}
+      trigger={<AddBoardButton className="border-dashed hover:border-solid" />}
       open={open}
       setOpen={setOpen}
     >

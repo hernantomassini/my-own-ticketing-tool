@@ -1,7 +1,11 @@
 {
   "shared": {
     "create": "Create",
-    "creating": "Creating..."
+    "creating": "Creating...",
+    "delete-board-description": "This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting..."
   },
   "layout-header": {
     "language-selector": {
@@ -29,19 +33,18 @@
     "add-board": "Add Board",
     "add-board-description": "Create a new board to manage your tickets.",
     "board-name": "Board name...",
-    "cancel": "Cancel",
-    "delete-board-title": "Delete board",
-    "delete-board-description": "This action cannot be undone.",
-    "delete": "Delete",
-    "deleting": "Deleting..."
+    "delete-board-title": "Delete board"
   },
   "board": {
     "error": "Error",
     "invalid-board-id": "Invalid Board ID.",
     "add-list": "Add a new list",
+    "add-ticket": "Add ticket",
     "list-name": "List name...",
     "new-ticket": "New Ticket",
+    "ticket-name": "Ticket Name...",
     "new-ticket-title": "Create a new ticket",
-    "new-ticket-description": "Fill in the details below to create a new ticket."
+    "new-ticket-description": "Fill in the details below to create a new ticket.",
+    "delete-board-list-title": "Delete list"
   }
 }

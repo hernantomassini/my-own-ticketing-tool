@@ -4,7 +4,7 @@ import { supabaseServer } from '@/lib/supabase-server';
 import { DeleteResult } from '@/models/actions-params/delete-result.model';
 import { DBTableName } from '@/models/enum/db-table-name.model';
 
-export async function deleteBoard(prev: DeleteResult, formData: FormData) {
+export async function deleteBoardList(prev: DeleteResult, formData: FormData) {
   const id = String(formData.get('id') || '').trim();
 
   if (!id) {
@@ -14,7 +14,7 @@ export async function deleteBoard(prev: DeleteResult, formData: FormData) {
   const supabase = await supabaseServer();
 
   const { error } = await supabase
-    .from(DBTableName.Board)
+    .from(DBTableName.BoardList)
     .delete()
     .eq('id', id);
 

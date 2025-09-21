@@ -6,15 +6,24 @@ import { Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useActionState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { deleteBoard } from "@/actions/board/delete";
+import { DeleteResult } from "@/models/actions-params/delete-result.model";
+import { cn } from "@/lib/utils";
 
-interface DeleteBoardButtonProps {
+type DeleteAction = (
+  prev: DeleteResult,
+  formData: FormData
+) => Promise<DeleteResult>;
+
+interface DeleteButtonProps {
   id: string;
+  action: DeleteAction;
+  title: string;
+  className?: string;
 }
 
-export default function DeleteBoardButton({ id }: DeleteBoardButtonProps) {
-  const t = useTranslations('home');
-  const [result, submitDelete, pending] = useActionState(deleteBoard, null);
+export default function DeleteButton({ id, action, title, className }: DeleteButtonProps) {
+  const t = useTranslations('shared');
+  const [result, submitDelete, pending] = useActionState(action, null);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +33,12 @@ export default function DeleteBoardButton({ id }: DeleteBoardButtonProps) {
   }, [result, router]);
 
   return (
-    <>
+    <div
+      className={cn(
+        'absolute right-2 top-2 z-10',
+        className
+      )}
+    >
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <Button
@@ -32,8 +46,8 @@ export default function DeleteBoardButton({ id }: DeleteBoardButtonProps) {
             variant="ghost"
             className="z-40 cursor-pointer h-8 w-8 rounded-full"
             onClick={(e) => { e.stopPropagation();}}
-            aria-label={t('delete-board-title')}
-            title={t('delete-board-title')}
+            aria-label={title}
+            title={title}
           >
             <Trash2 className="h-4 w-4" />
           </Button>
@@ -41,7 +55,7 @@ export default function DeleteBoardButton({ id }: DeleteBoardButtonProps) {
 
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t('delete-board-title')}</AlertDialogTitle>
+            <AlertDialogTitle>{title}</AlertDialogTitle>
             <AlertDialogDescription>{t('delete-board-description')}</AlertDialogDescription>
           </AlertDialogHeader>
 
@@ -60,6 +74,6 @@ export default function DeleteBoardButton({ id }: DeleteBoardButtonProps) {
 
         </AlertDialogContent>
       </AlertDialog>
-    </>
+    </div>
   )
 }

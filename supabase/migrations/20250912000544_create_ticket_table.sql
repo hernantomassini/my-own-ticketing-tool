@@ -6,7 +6,7 @@ create table public.ticket (
   title        text not null check (length(btrim(title)) > 0),
   description  text,
   assigned_to  uuid,
-  sort_order   int  not null,
+  sort_order   int,
   created_by   uuid not null default auth.uid(),
   created_at   timestamptz not null default now(),
   updated_at   timestamptz not null default now(),

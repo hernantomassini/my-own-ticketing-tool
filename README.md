@@ -26,7 +26,7 @@ This app is a **Kanban-style board (similar to Trello)** where you can:
 - [x] Create the Login screen
 - [x] Implement CRUD for Boards
 - [x] Create a reusable layout to change to another Board.
-- [ ] Implement CRUD for Columns
+- [x] Implement CRUD for Columns
 - [ ] Implement CRUD for Tickets
 - [ ] Add filtering options on the Board screen
 - [ ] Implement Drag and drop features 
@@ -59,9 +59,8 @@ Clone the repo and run the development server:
 ```bash
 git clone https://github.com/hernantomassini/my-own-ticketing-tool.git
 cd my-own-ticketing-tool
-
 npm install
-npm run supabase:start
+npm run db:start
 Copy .env.example and rename it to .env. Then update NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY values.
-npm run supabase:reset # to run migrations
-npm run dev # or yarn dev / pnpm dev / bun dev
+npm run db:reset
+npm run dev

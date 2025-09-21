@@ -1,7 +1,11 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import DeleteBoardButton from "./DeleteBoardButton";
+import DeleteButton from "../../../../components/DeleteButton";
+import { deleteBoard } from "@/actions/board/delete";
+import { useTranslations } from "next-intl";
 
 type ButtonProps = React.ComponentProps<'button'>;
 
@@ -16,10 +20,11 @@ type BoardButtonProps = {
 export default function BoardButton({ href, icon, label, className, boardId, deletable, ...props}: BoardButtonProps) {
   const cardClasses = cn(
     "cursor-pointer group h-36 w-36 rounded-xl",
-    "border-2 border-dashed hover:border-solid",
+    "border-2 border-solid",
     "hover:bg-muted/40",
     "flex flex-col items-center justify-center gap-1",
-    "font-medium"
+    "font-medium",
+    className
   );
 
   const content = (
@@ -32,19 +37,17 @@ export default function BoardButton({ href, icon, label, className, boardId, del
     </>
   );
 
+  const t = useTranslations('home');
+
   const deleteButton = (
     <>
-      {deletable && boardId && (
-        <div className="absolute right-2 top-2 z-10">
-          <DeleteBoardButton id={boardId} />
-        </div>
-      )}
+      {deletable && boardId && <DeleteButton id={boardId} action={deleteBoard} title={t('delete-board-title')} />}
     </>
   )
 
   if (href) {
     return (
-      <div className={cn("relative inline-block", className)}>
+      <div className="relative inline-block">
         <Button
           asChild
           variant="outline"
