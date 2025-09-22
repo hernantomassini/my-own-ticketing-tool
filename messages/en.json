@@ -43,8 +43,11 @@
     "list-name": "List name...",
     "new-ticket": "New Ticket",
     "ticket-name": "Ticket Name...",
+    "ticket-description": "Ticket Description...",
     "new-ticket-title": "Create a new ticket",
     "new-ticket-description": "Fill in the details below to create a new ticket.",
-    "delete-board-list-title": "Delete list"
+    "delete-board-list-title": "Delete list",
+    "assigned-to": "Assigned To",
+    "none": "None"
   }
 }
