@@ -34,5 +34,17 @@ export async function getBoardsListWithTickets(boardId: string): Promise<BoardCo
     return [];
   }
 
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    throw new Error('No user session found');
+  }
+
+  data.forEach(x => x.tickets.forEach(t => {
+    if (t.assignedTo) {
+      t.assignedTo.isCurrentUser = t.assignedTo.id === user.id;
+    }
+  }));
+
   return data;
 }

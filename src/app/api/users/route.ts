@@ -5,6 +5,12 @@ import { DBTableName } from "@/models/enum/db-table-name.model";
 export async function GET() {
   const supabase = await supabaseServer();
 
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    throw new Error('No user session found');
+  }
+
   const { data, error } = await supabase
     .from(DBTableName.Profile)
     .select("id, display_name");
@@ -17,6 +23,7 @@ export async function GET() {
   const users = (data ?? []).map((x) => ({
     id: x.id,
     displayName: x.display_name,
+    isCurrentUser: x.id === user.id,
   }));
 
   return NextResponse.json(users, { status: 200 });

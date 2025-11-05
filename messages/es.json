@@ -50,6 +50,7 @@
     "update-ticket-description": "Completa los detalles para actualizar el ticket.",
     "delete-board-list-title": "Borrar lista",
     "assigned-to": "Asignado a",
-    "none": "Ninguno"
+    "none": "Ninguno",
+    "me": " (yo)"
   }
 }

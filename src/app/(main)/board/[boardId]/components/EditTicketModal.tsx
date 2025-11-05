@@ -73,7 +73,10 @@ export default function EditTicketModal({ ticket, boardId, onSuccess }: EditTick
           <SelectContent>
             <SelectItem value="undefined">{t('board.none')}</SelectItem>
             {users.map((u) => (
-              <SelectItem key={u.id} value={u.id}>{u.displayName}</SelectItem>
+              <SelectItem key={u.id} value={u.id}>
+                {u.displayName}
+                {u.isCurrentUser ? t('board.me') : ""}
+              </SelectItem>
             ))}
           </SelectContent>
         </Select>
