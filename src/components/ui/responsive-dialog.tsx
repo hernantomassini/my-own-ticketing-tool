@@ -1,4 +1,4 @@
-"use client"
+import 'client-only'
 
 import {
   Dialog,
@@ -18,7 +18,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { useIsDesktop } from '@/hooks/useIsDesktop';
 
@@ -30,6 +30,8 @@ type Props = {
   description: string;
   showTitle?: boolean;
   showDescription?: boolean;
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export function ResponsiveDialog({
@@ -40,8 +42,9 @@ export function ResponsiveDialog({
   description,
   showTitle = false,
   showDescription = false,
+  open,
+  setOpen
 }: Props) {
-  const [open, setOpen] = useState(false)
   const isDesktop = useIsDesktop();
 
   const [mounted, setMounted] = useState(false)

@@ -47,6 +47,7 @@ export default async function BoardPage({ params }: BoardPageRouteProps) {
               id={list.id}
               title={list.title}
               tickets={list.tickets}
+              boardId={boardId}
             />
           ))}
 

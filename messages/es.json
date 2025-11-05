@@ -5,7 +5,9 @@
     "delete-board-description": "Esta acción no se puede deshacer.",
     "cancel": "Cancelar",
     "delete": "Borrar",
-    "deleting": "Borrando..."
+    "deleting": "Borrando...",
+    "update": "Actualizar",
+    "updating": "Actualizando..."
   },
   "layout-header": {
     "language-selector": {
@@ -44,8 +46,8 @@
     "new-ticket": "Nuevo Ticket",
     "ticket-name": "Nombre del ticket...",
     "ticket-description": "Descripción del ticket...",
-    "new-ticket-title": "Crear un nuevo ticket",
-    "new-ticket-description": "Test",
+    "update-ticket": "Actualizar ticket",
+    "update-ticket-description": "Completa los detalles para actualizar el ticket.",
     "delete-board-list-title": "Borrar lista",
     "assigned-to": "Asignado a",
     "none": "Ninguno"

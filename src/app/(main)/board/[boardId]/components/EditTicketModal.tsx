@@ -11,17 +11,17 @@ import { useActionState, useEffect, useState } from "react";
 
 interface EditTicketModalProps {
   ticket: TicketSummary;
+  boardId: string;
+  onSuccess?: () => void;
 }
 
-export default function EditTicketModal({ ticket }: EditTicketModalProps) {
+export default function EditTicketModal({ ticket, boardId, onSuccess }: EditTicketModalProps) {
   const t = useTranslations();
 
   const [users, setUsers] = useState<UserSummary[]>([]);
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-
-  const [selectedUserId, setSelectedUserId] = useState<string | undefined>(ticket?.assignedTo ?? undefined);
-  console.log('ticket', ticket);
+  const [selectedUserId, setSelectedUserId] = useState<string | undefined>(ticket?.assignedTo?.id ?? undefined);
 
   useEffect(() => {
     setTitle(ticket?.title);
@@ -52,6 +52,12 @@ export default function EditTicketModal({ ticket }: EditTicketModalProps) {
 
   const [state, submitAction, pending] = useActionState(updateTicket, null);
 
+  useEffect(() => {
+    if (state?.ok) {
+      onSuccess?.();
+    }
+  }, [state, onSuccess]);
+
   return (
     <>
       <form action={submitAction} className="mt-3 space-y-3">
@@ -73,9 +79,10 @@ export default function EditTicketModal({ ticket }: EditTicketModalProps) {
         </Select>
 
         <input type="hidden" name="assigned_user_id" value={selectedUserId ?? ""} />
+        <input type="hidden" name="board_id" value={boardId} />
 
         <Button className="w-full" type="submit" disabled={pending}>
-          {pending ? t('shared.creating') : t('shared.create')}
+          {pending ? t('shared.updating') : t('shared.update')}
         </Button>
       </form>
     </>

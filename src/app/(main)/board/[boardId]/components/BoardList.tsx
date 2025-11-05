@@ -10,9 +10,10 @@ interface BoardListProps {
   id: string;
   title: string;
   tickets: TicketSummary[];
+  boardId: string;
 }
 
-export default async function BoardList({ id, title, tickets }: BoardListProps) {
+export default async function BoardList({ id, title, tickets, boardId }: BoardListProps) {
 
   const t = await getTranslations('board');
 
@@ -26,11 +27,12 @@ export default async function BoardList({ id, title, tickets }: BoardListProps) 
           />
         </div>
 
-        <div className="space-y-3 mb-3">
+        <div className="flex flex-col space-y-3 mb-3">
           {(tickets || []).map((ticket) => (
             <TicketButton
               key={ticket.id}
               ticket={ticket}
+              boardId={boardId}
             />
           ))}
         </div>

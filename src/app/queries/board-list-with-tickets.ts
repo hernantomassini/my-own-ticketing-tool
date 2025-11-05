@@ -18,7 +18,7 @@ export async function getBoardsListWithTickets(boardId: string): Promise<BoardCo
         title,
         position: sort_order,
         description,
-        assignedTo:profiles ( display_name )
+        assignedTo: profiles ( id, display_name )
       )
     `)
     .eq('board_id', boardId)

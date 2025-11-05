@@ -5,7 +5,9 @@
     "delete-board-description": "This action cannot be undone.",
     "cancel": "Cancel",
     "delete": "Delete",
-    "deleting": "Deleting..."
+    "deleting": "Deleting...",
+    "update": "Update",
+    "updating": "Updating..."
   },
   "layout-header": {
     "language-selector": {
@@ -44,8 +46,8 @@
     "new-ticket": "New Ticket",
     "ticket-name": "Ticket Name...",
     "ticket-description": "Ticket Description...",
-    "new-ticket-title": "Create a new ticket",
-    "new-ticket-description": "Fill in the details below to create a new ticket.",
+    "update-ticket": "Update ticket",
+    "update-ticket-description": "Fill in the details below to update the ticket.",
     "delete-board-list-title": "Delete list",
     "assigned-to": "Assigned To",
     "none": "None"
